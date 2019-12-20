@@ -210,16 +210,14 @@ function getCarInfoById(array, number) {
  * sortCarInventory returns an inventory that is sorted by car_model, ascending [A-Z].
 */
 function sortCarInventory(array) {
-
-
+  
   for (let i = 0; i < array.length; i++) {
-      let alpha = [];
-
-  if (array[i] === array[i].car_model) {
+  
+  if (array[i].car_model) {
+    let alpha = array.sort();
     return alpha.push(array[i])
   
 }
-return alpha.sort();
 
 }
 
@@ -259,7 +257,7 @@ return years;
 function getOlderCars(array, number) {
   let old = [];
   for (let i = 0; i < array.length; i++) {
-     if (array[i].car_year = number ) {
+     if (array[i].car_year <= number ) {
        old.push(array[i])
   }
   
@@ -326,9 +324,27 @@ const argTimesTwo = (num) => num * 2;
  *         (1) causes the odometer in the object to be increased by the distance,
  *         (2) returns the updated value of the `odometer`.
 */
-function carMaker(/* code here */) {
-  /* code here */
+function carMaker(odometer) {
+  
+
+  return {
+   odometer: odometer,
+
+    drive: function (distance) {
+    
+      odometer+=distance 
+      return odometer;
+      
+
+
+    }
+   
+
+  }
 }
+
+
+
 
 /// ////// END OF CHALLENGE /////////
 /// ////// END OF CHALLENGE /////////
